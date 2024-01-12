@@ -3,11 +3,27 @@
 	
 package com.assignment.votecount.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.assignment.votecount.service.CandidateService;
 
 @RestController
 @RequestMapping("/")
 public class VoteController {
 
+    CandidateService service;
+	
+	VoteController(CandidateService cservice){
+		this.service=cservice;
+	}
+	//COntroller method for entering candidate
+	@GetMapping("entercandidate")
+	@ResponseBody
+	public String enterCandidate(@RequestParam String name){
+		 return this.service.createCandidate(name);
+	}
 }
