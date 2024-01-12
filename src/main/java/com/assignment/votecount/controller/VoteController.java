@@ -33,4 +33,11 @@ public class VoteController {
 	public String castVote(@RequestParam String name){
 		 return this.service.castVote(name);
 	}
+
+    //Controller method for counting vote of candidate
+	@GetMapping("countvote")
+	@ResponseBody
+	public String countVote(@RequestParam String name){
+		 return this.service.countVote(name);
+	}
 }

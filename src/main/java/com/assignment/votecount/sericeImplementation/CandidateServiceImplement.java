@@ -43,4 +43,15 @@ public class CandidateServiceImplement implements CandidateService{
 			return candidateName+" "+this.votes.getCandidates().get(candidateName);
 		}
 	}
+
+    @Override
+	public String countVote(String candidateName) {
+		if(!this.votes.getCandidates().containsKey(candidateName)) {
+			return "Cadidate does't exists";
+		}
+		else {
+			this.votes.getCandidates().get(candidateName);
+			return candidateName+" "+this.votes.getCandidates().get(candidateName);
+		}
+	}
 }
