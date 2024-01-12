@@ -63,4 +63,18 @@ public class CandidateServiceImplement implements CandidateService{
 		ObjectMapper objectMapper=new ObjectMapper();
 		return objectMapper.writeValueAsString(this.votes.getCandidates());
 	}
+
+    @Override
+	public String getWinner() {
+		String name=null;
+		int comparator=0;
+		for(Map.Entry<String,Integer> entry:this.votes.getCandidates().entrySet()) {
+			if(entry.getValue()<comparator) { continue;}
+			else {
+				name=entry.getKey();
+				comparator=entry.getValue();
+			}
+		}
+		return "Winner is: "+name;
+	}
 }

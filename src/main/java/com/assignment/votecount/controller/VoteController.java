@@ -48,4 +48,11 @@ public class VoteController {
 	public String listVote() throws JsonProcessingException{
 		return this.service.listVote();
 	}
+    
+	//Controller method for get winning candidate name
+	@GetMapping("getwinner")
+	@ResponseBody
+	public String getWinner(){
+		return this.service.getWinner();
+	}
 }

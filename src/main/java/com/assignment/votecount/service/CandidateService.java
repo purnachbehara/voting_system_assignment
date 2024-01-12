@@ -14,4 +14,7 @@ public interface CandidateService {
 
     //method for listing all cadidate's votes in project
 	public String listVote() throws JsonProcessingException;
+
+    //method for returning winner
+	public String getWinner();
 }
