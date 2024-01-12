@@ -1,5 +1,6 @@
 package com.assignment.votecount.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 public interface CandidateService {
     //method for creating a candidate
@@ -10,4 +11,7 @@ public interface CandidateService {
 
     //method for count number of votes of a candidate
 	public String countVote(String candidateName);
+
+    //method for listing all cadidate's votes
+	public String listVote() throws JsonProcessingException;
 }

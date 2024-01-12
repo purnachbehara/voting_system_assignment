@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 
 import com.assignment.votecount.entity.VoteCandidates;
 import com.assignment.votecount.service.CandidateService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 @Service
@@ -53,5 +55,11 @@ public class CandidateServiceImplement implements CandidateService{
 			this.votes.getCandidates().get(candidateName);
 			return candidateName+" "+this.votes.getCandidates().get(candidateName);
 		}
+	}
+
+    @Override
+	public String listVote() throws JsonProcessingException{
+		ObjectMapper objectMapper=new ObjectMapper();
+		return objectMapper.writeValueAsString(this.votes.getCandidates());
 	}
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.assignment.votecount.service.CandidateService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 @RestController
 @RequestMapping("/")
@@ -39,5 +40,12 @@ public class VoteController {
 	@ResponseBody
 	public String countVote(@RequestParam String name){
 		 return this.service.countVote(name);
+	}
+
+    //Controller method for listing candidates with votes
+	@GetMapping("listvote")
+	@ResponseBody
+	public String listVote() throws JsonProcessingException{
+		return this.service.listVote();
 	}
 }
