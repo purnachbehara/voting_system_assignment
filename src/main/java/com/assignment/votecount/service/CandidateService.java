@@ -12,6 +12,6 @@ public interface CandidateService {
     //method for count number of votes of a candidate
 	public String countVote(String candidateName);
 
-    //method for listing all cadidate's votes
+    //method for listing all cadidate's votes in project
 	public String listVote() throws JsonProcessingException;
 }

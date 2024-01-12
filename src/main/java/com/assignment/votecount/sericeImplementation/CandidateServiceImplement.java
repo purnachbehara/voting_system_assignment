@@ -57,6 +57,7 @@ public class CandidateServiceImplement implements CandidateService{
 		}
 	}
 
+    //service implementation 
     @Override
 	public String listVote() throws JsonProcessingException{
 		ObjectMapper objectMapper=new ObjectMapper();

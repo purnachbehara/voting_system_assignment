@@ -42,7 +42,7 @@ public class VoteController {
 		 return this.service.countVote(name);
 	}
 
-    //Controller method for listing candidates with votes
+    //Controller method for listing candidates and votes
 	@GetMapping("listvote")
 	@ResponseBody
 	public String listVote() throws JsonProcessingException{
