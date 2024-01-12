@@ -26,4 +26,11 @@ public class VoteController {
 	public String enterCandidate(@RequestParam String name){
 		 return this.service.createCandidate(name);
 	}
+
+    //Controller method for cast vote
+	@GetMapping("castvote")
+	@ResponseBody
+	public String castVote(@RequestParam String name){
+		 return this.service.castVote(name);
+	}
 }

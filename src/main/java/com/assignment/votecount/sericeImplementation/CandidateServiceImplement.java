@@ -32,5 +32,15 @@ public class CandidateServiceImplement implements CandidateService{
 		}
 	}
 
-
+    @Override
+	public String castVote(String candidateName) {
+		if(!this.votes.getCandidates().containsKey(candidateName)) {
+			return "Cadidate does't exists";
+		}
+		else {
+			int value=this.votes.getCandidates().get(candidateName);
+			this.votes.updateCandidate(candidateName, ++value);
+			return candidateName+" "+this.votes.getCandidates().get(candidateName);
+		}
+	}
 }
